@@ -1,0 +1,74 @@
+<% provide(:title, 'Sign up') %>
+
+<%= stylesheet_link_tag("normalize") %>
+<%= stylesheet_link_tag("foundation.min") %>
+<%= stylesheet_link_tag("style.css") %>
+<%= stylesheet_link_tag("ie") %>
+<%= stylesheet_link_tag("http://fonts.googleapis.com/css?family=Noto+Sans:400,700", type:'text/css') %>
+<%= stylesheet_link_tag("http://fonts.googleapis.com/css?family=Cabin+Condensed:600", type:'text/css') %>
+
+<%= javascript_include_tag("vendor/custom.modernizr") %>
+
+<%= form_for(@user, :html => {:multipart => true }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+<div class="form" >
+
+  <div class="tab-content">
+    <div id="signup">
+      <h1> Sign Up for Free</h1>
+
+      <form action="/" method="post">
+
+        <div class="top-row">
+
+          <div class="field-wrap" >
+
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+
+          </div>
+
+          <div class="field-wrap">
+
+            <%= f.label :lastName %>
+            <%= f.text_field :lastName %>
+
+          </div>
+        </div>
+
+        <div class="field-wrap">
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </div>
+
+        <div class="field-wrap">
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+
+          <%= f.label :password_confirmation, "Confirmation" %>
+          <%= f.password_field :password_confirmation %>
+        </div>
+
+        <div class="form-group">
+          <label for="logo">Please provide a logo</label>
+          <%= f.file_field :logo %>
+        </div>
+
+        <%= f.submit "Create my account", class: "button button-block" %>
+
+
+      </form>
+
+    </div>
+
+
+
+        <button/></button>
+
+      </form>
+
+    </div>
+
+  </div><!-- tab-content -->
+<% end %>
+</div> <!-- /form -->

@@ -1,0 +1,35 @@
+<div id="top"  data-magellan-expedition="fixed">
+  <div class="row">
+    <div class="large-12 columns">
+      <nav class="top-bar">
+        <ul class="title-area">
+          <li class="name logo">
+            <%= link_to image_tag("playarshop.png", alt: ""), root_path %>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <ul class="right" id="menu">
+
+            <% if signed_in? %>
+
+                <li><a><%= link_to "Users", users_path %></a></li>
+                <li><a><%= link_to "Profile", current_user %></a></li>
+                <li><a><%= link_to "Settings", edit_user_path(current_user) %></a></li>
+                <li><a> <%= link_to "Sign out", signout_path, method: "delete" %></a></li>
+
+            <% else %>
+
+                <li><a href=""><%= link_to "Sign up !", signup_path %></a></li>
+                <li><a href=""><%= link_to "Sign in", signin_path %></a></li>
+                <li><a href=""><%= link_to "Home", root_path %></a></li>
+                <li><a href=""><%= link_to "Contact Us", contact_url %></a></li>
+
+            <% end %>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+</div>

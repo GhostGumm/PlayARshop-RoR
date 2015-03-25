@@ -1,0 +1,13 @@
+<h1 style="color: black">Choose a game from the list <%= @user.name %></h1>
+<%= javascript_include_tag :all%>
+<div class="col-lg-12 col-offset-6 pagination-centered">
+
+  <%= link_to image_tag("ballooon.png", :border => 0, :width => 304, :height => 228 ), {:action => 'new', :controller => 'games', :id=>@user.id, :game_id => 1}%>
+  <%= link_to image_tag("bandit_manchot.jpg", :border => 0, :width => 304, :height => 228), {:action => 'new', :controller => 'games', :id=>@user.id, :game_id => 2}%>
+
+
+</div>
+
+<br>
+
+

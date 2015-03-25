@@ -1,0 +1,13 @@
+<%= javascript_include_tag :defaults%>
+<%= javascript_include_tag 'jquery-1.4.2.min.js', 'application'%>
+<h1>Please personalize your choosen game !! </h1>
+
+<%= render 'form' %>
+
+<button type="button" class="btn btn-danger" aria-label="Left Align">
+  <span class="icon-arrow-left"></span>
+
+  <%= link_to "Back", games_path(:id=>@user.id) %>
+
+</button>
+

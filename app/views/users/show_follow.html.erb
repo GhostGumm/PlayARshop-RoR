@@ -1,0 +1,39 @@
+<% provide(:title, @title) %>
+<%= stylesheet_link_tag("normalize") %>
+<%= stylesheet_link_tag("foundation.min") %>
+<%= stylesheet_link_tag("style.css") %>
+<%= stylesheet_link_tag("ie") %>
+<%= stylesheet_link_tag("http://fonts.googleapis.com/css?family=Noto+Sans:400,700", type:'text/css') %>
+<%= stylesheet_link_tag("http://fonts.googleapis.com/css?family=Cabin+Condensed:600", type:'text/css') %>
+
+<%= javascript_include_tag("vendor/custom.modernizr") %>
+
+<div class="row">
+  <aside class="span4">
+    <section>
+      <%= gravatar_for @user %>
+      <h1><%= @user.name %></h1>
+      <span><%= link_to "view my profile", @user %></span>
+      <span><b>Microposts:</b> <%= @user.microposts.count %></span>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+      <% if @users.any? %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+            <%= link_to gravatar_for(user, size: 30), user %>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </aside>
+  <div class="span8">
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+      <ul class="users">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate %>
+    <% end %>
+  </div>
+</div>
